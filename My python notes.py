@@ -300,6 +300,8 @@ with open('example.txt', 'r') as file:
 with open('example.txt', 'r+') as file:
     file.seek(0)  # Move the file pointer to the beginning of the file
     file.truncate()  # This will truncate the file to the current position of the file pointer, effectively clearing the contents of the file
+# higher order functions
+# Higher-order functions are functions that can take other functions as arguments or return functions as their result. They are a fundamental concept in functional programming and allow for more flexible and reusable code. In Python, functions are first-class citizens, which means that they can be treated like any other object, such as being passed as arguments to other functions or returned from functions. Higher-order functions enable you to create more abstract and powerful code by allowing you to manipulate functions as data. Examples of higher-order functions in Python include map(), filter(), reduce(), and sorted(), among others. These functions can take other functions as arguments to perform operations on iterables, making it easier to write concise and efficient code for data processing and transformation tasks.
 # lambda functions
 # Lambda functions, also known as anonymous functions, are small, unnamed functions that can be defined in a single line of code. They are often used for short, simple functions that are not intended to be reused elsewhere in the code. The syntax for a lambda function is: lambda arguments: expression. For example, lambda x: x * 2 defines a lambda function that takes one argument x and returns its value multiplied by 2. Lambda functions can be used in various contexts, such as with the map(), filter(), and reduce() functions, or as key functions for sorting. They provide a convenient way to create small, throwaway functions without the need for a formal function definition using def. However, it is important to use lambda functions judiciously, as they can make code less readable if overused or used for complex operations. In general, it is best to use lambda functions for simple operations and to define regular functions using def for more complex logic or when the function needs to be reused in multiple places in the code. 
 def double(x):
@@ -393,6 +395,11 @@ print(outcome_matrix.get((player_choice, computer_choice), "Invalid choice! Plea
 # Object-Oriented Programming (OOP) is important in Python because it provides a structured and modular approach to programming, allowing developers to create reusable and maintainable code. OOP allows you to model real-world entities as objects, which can have attributes (data) and methods (functions) that operate on that data. This promotes encapsulation, where the internal state of an object is hidden from the outside world and can only be accessed through defined interfaces. OOP also supports inheritance, which allows you to create new classes based on existing ones, promoting code reuse and reducing redundancy. Additionally, OOP enables polymorphism, allowing objects of different classes to be treated as instances of a common superclass, making it easier to write flexible and extensible code. Overall, OOP concepts help to improve code organization, readability, and maintainability in Python programming.
 # Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects, which are instances of classes. In Python, OOP is supported through the use of classes and objects. A class is a blueprint for creating objects, while an object is an instance of a class that can have its own attributes and methods. OOP allows for encapsulation, inheritance, and polymorphism, which are key principles that help to promote code reusability, modularity, and maintainability. By using OOP concepts in Python, you can create more organized and structured code that is easier to understand and maintain over time.
 # In Python, you can define a class using the class keyword, followed by the name of the class and a colon. Inside the class, you can define attributes (variables) and methods (functions) that belong to the class. For example:
+class definitions
+    def person(name, age):
+        print(f"Name: {name}, Age: {age}")
+definitions.person("Alice", 30)  # This will print "Name: Alice, Age: 30"
+# In this example, we define a class called definitions with a method called person that takes two parameters, name and age. We then call the person method with the arguments "Alice" and 30, which prints the name and age to the console. This is a simple example of how to define a class and a method in Python. You can create more complex classes with multiple attributes and methods to model real-world entities and behaviors in your code.
 class Person:
     def __init__(self, name, age):
         self.name = name  # This is an attribute of the class
@@ -432,10 +439,106 @@ class Car:
         self.make = make  # This is an attribute of the class
         self.model = model  # This is another attribute of the class
         self.year = year  # This is yet another attribute of the class
+        print(f"Car created: {self.make} {self.model} ({self.year})")  # This will print a message when a Car object is created
+# In this example, we define a class called Car with an __init__() method that initializes the make, model, and year attributes of the class. When we create an instance of the Car class, the __init__() method is automatically called, and we can pass the values for make, model, and year to initialize the attributes of the car object. The constructor allows us to set up our objects with specific initial values when they are created, making it easier to work with them in our code.
+a=Car("Toyota", "Camry", 2020)
+print(a.make)  # This will print "Toyota"
+print(a.model)  # This will print "Camry"
+print(a.year)  # This will print 2020
+# In this example, we define a class called Car with an __init__() method that initializes the make, model, and year attributes of the class. When we create an instance of the Car class (a), the __init__() method is automatically called, and we pass the values "Toyota", "Camry", and 2020 to initialize the attributes of the car object. We can then access these attributes using dot notation (a.make, a.model, a.year) to retrieve their values. The constructor allows us to set up our objects with specific initial values when they are created, making it easier to work with them in our code. 
+# types of constructors in python
+# In Python, there are three types of constructors: default constructor, parameterized constructor, and copy constructor.
+#1. Default Constructor: A default constructor is a constructor that takes no parameters and initializes the attributes of the class with default values. If you do not define an __init__() method in your class, Python will automatically provide a default constructor that does nothing. For example:
+class DefaultConstructorExample:
+    def __init__(self):
+        self.message = "This is a default constructor"
+# In this example, we define a class called DefaultConstructorExample with a default constructor that initializes the message attribute with a default value. When we create an instance of this class, the __init__() method is automatically called, and the message attribute is set to "This is a default constructor".
+#2. Parameterized Constructor: A parameterized constructor is a constructor that takes parameters and initializes the attributes of the class with the values passed as arguments. This allows you to create objects with specific initial values. For example:
+class ParameterizedConstructorExample:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
 
+# In this example, we define a class called ParameterizedConstructorExample with a parameterized constructor that takes name and age as parameters and initializes the corresponding attributes. When we create an instance of this class, we pass the values for name and age to the constructor, which then initializes the attributes with those values. 
+#3. Copy Constructor: A copy constructor is a constructor that creates a new object as a copy of an existing object. In Python, you can create a copy constructor by defining an __init__() method that takes an instance of the same class as a parameter and copies its attributes to the new object. For example:
+class CopyConstructorExample:
+    def __init__(self, other):
+        self.name = other.name
+        self.age = other.age
+# In this example, we define a class called CopyConstructorExample with a copy constructor that takes another instance of the same class (other) as a parameter and copies its name and age attributes to the new object. When we create an instance of this class using another instance, it will create a new object with the same attribute values as the original object.
+original = CopyConstructorExample(ParameterizedConstructorExample("Alice", 30))
+copy = CopyConstructorExample(original)
+print(copy.name)  # This will print "Alice" 
+print(copy.age)  # This will print 30
+# In this example, we first create an instance of the ParameterizedConstructorExample class with the name "Alice" and age 30. We then create a new instance of the CopyConstructorExample class by passing the original instance as an argument to the copy constructor. The copy constructor initializes the name and age attributes of the new object with the values from the original object. As a result, when we print copy.name and copy.age, we get "Alice" and 30, respectively, demonstrating that the copy constructor successfully created a new object with the same attribute values as the original object.
+# decorators in python
+# In Python, a decorator is a design pattern that allows you to modify the behavior of a function or a class method without changing its source code. A decorator is a higher-order function that takes another function as an argument and returns a new function that typically extends the behavior of the original function. Decorators are often used for logging, access control, memoization, and other cross-cutting concerns in programming. They are defined using the @ symbol followed by the name of the decorator function above the function definition that you want to decorate. For example:
+def my_decorator(func):
+    def wrapper():
+        print("Before the function is called.")
+        func()
+        print("After the function is called.")
+    return wrapper
+@my_decorator
+def say_hello():
+    print("Hello!")
+# In this example, we define a decorator function called my_decorator that takes a function (func) as an argument and defines a wrapper function that adds some behavior before and after calling the original function. We then use the @my_decorator syntax to decorate the say_hello function. When we call say_hello(), it will execute the wrapper function defined in the decorator, which will print messages before and after calling the original say_hello function, resulting in the following output:
+say_hello()
+# Output:
+# Before the function is called.    
+# Hello!
+# After the function is called.
+# In this example, the my_decorator function modifies the behavior of the say_hello function by adding additional functionality before and after the original function is executed. This allows us to enhance the functionality of say_hello without modifying its source code, demonstrating the power and flexibility of decorators in Python.
+#using *args and **kwargs in python
+# In Python, *args and **kwargs are used to allow a function to accept an arbitrary number of positional and keyword arguments, respectively. The *args syntax allows you to pass a variable number of positional arguments to a function, which are then accessible as a tuple within the function. For example:
+def my_function(*args):
+    for arg in args:
+        print(arg)
+my_function(1, 2, 3)  # This will print 1, 2, and 3 on separate lines
+# In this example, the my_function takes *args as a parameter, which allows it to accept any number of positional arguments. When we call my_function(1, 2, 3), it prints each argument on a separate line.
+# The **kwargs syntax allows you to pass a variable number of keyword arguments to a function, which are then accessible as a dictionary within the function. For example:
+def my_function(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+my_function(name="Alice", age=30, city="New York")  # This will print the key-value pairs of the keyword arguments
+# In this example, the my_function takes **kwargs as a parameter, which allows it to accept any number of keyword arguments. When we call my_function(name="Alice", age=30, city="New York"), it prints each key-value pair of the keyword arguments on a separate line. This allows us to create flexible functions that can handle varying numbers of arguments without needing to define them explicitly in the function signature.
+# In summary, *args and **kwargs are powerful tools in Python that allow you to create functions that can accept a variable number of arguments, making your code more flexible and adaptable to different use cases. By using *args for positional arguments and **kwargs for keyword arguments, you can design functions that can handle a wide range of input without needing to specify every possible argument in advance.
+# Now using these with decorators
+def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Before the function is called.")
+        result = func(*args, **kwargs)  # Pass the arguments to the original function
+        print("After the function is called.")
+        return result  # Return the result of the original function
+    return wrapper
+@my_decorator
+def greet(name):
+    return f"Hello, {name}!"
+# In this example, we define a decorator function called my_decorator that takes a function (func) as an argument and defines a wrapper function that accepts any number of positional and keyword arguments using *args and **kwargs. The wrapper function adds some behavior before and after calling the original function, and it also returns the result of the original function. We then use the @my_decorator syntax to decorate the greet function. When we call greet("Alice"), it will execute the wrapper function defined in the decorator, which will print messages before and after calling the original greet function, and it will return the greeting message as well:
+print(greet("Alice"))
+# Output:
+# Before the function is called.
+# After the function is called.
+# Hello, Alice!
+# In this example, the my_decorator function modifies the behavior of the greet function by adding additional functionality before and after the original function is executed, while also allowing us to pass arguments to the original function and return its result. This demonstrates how *args and **kwargs can be used in conjunction with decorators to create flexible and powerful functions in Python.
+#getter and setter in python
+# In Python, getters and setters are methods that allow you to access and modify the attributes of a class in a controlled manner. They are typically used to encapsulate the internal state of an object and provide a way to validate or manipulate the data before it is accessed or modified. Getters are methods that retrieve the value of an attribute, while setters are methods that set the value of an attribute. In Python, you can use the @property decorator to define a getter method and the @<attribute_name>.setter decorator to define a setter method for a specific attribute. For example:
+class Person:
+    def __init__(self, name):
+        self._name = name  # The underscore indicates that this attribute is intended to be private
 
+    @property
+    def name(self):  # This is the getter method for the name attribute
+        return self._name
 
+    @name.setter
+    def name(self, new_name):  # This is the setter method for the name attribute
+        if isinstance(new_name, str) and new_name:  # Validate that the new name is a non-empty string
+            self._name = new_name
+        else:
+            raise ValueError("Name must be a non-empty string.")
+# In this example, we define a class called Person with a private attribute _name. We use the @property decorator to define a getter method for the name attribute, which allows us to access the value of _name in a controlled way. We also use the @name.setter decorator to define a setter method for the name attribute, which allows us to set the value of _name while also validating that the new name is a non-empty string. This approach helps to encapsulate the internal state of the object and provides a way to ensure that the data is valid when it is modified.
 
 
 
