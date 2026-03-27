@@ -58,7 +58,7 @@ class Solution:
         return a
 #136. Single Number
 class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
+    def singleNumber(self, nums: List[int]) -> int: # type: ignore
         for x in nums:
             if nums.count(x)!=2:
                 return x
@@ -144,7 +144,7 @@ class Solution:
         return s
 #593. Valid Square
 class Solution:
-    def validSquare(self, p1: List[int], p2: List[int], p3: List[int], p4: List[int]) -> bool:
+    def validSquare(self, p1: List[int], p2: List[int], p3: List[int], p4: List[int]) -> bool: # type: ignore
         def dist(a,b):
             return (a[0]-b[0])**2+(a[1]-b[1])**2
         points=[p1,p2,p3,p4]

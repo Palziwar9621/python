@@ -172,7 +172,7 @@ def greet(name):
 def greet(name):
     return f"Hello, {name}!"
 #in main.py
-from kratim import greet # this will import the greet function from the kratim module and it will be executed when main.py is run directly, but it will not be executed when main.py is imported as a module in another script. This allows us to use the greet function in other scripts without executing the code that is meant to be run only when main.py is executed directly.
+from kratim import greet # type: ignore # this will import the greet function from the kratim module and it will be executed when main.py is run directly, but it will not be executed when main.py is imported as a module in another script. This allows us to use the greet function in other scripts without executing the code that is meant to be run only when main.py is executed directly.
 if __name__ == "__main__":
     name = "Alice"
     print(greet(name)) # this will print "Hello, Alice!" when main.py is run directly
@@ -393,7 +393,7 @@ print(outcome_matrix.get((player_choice, computer_choice), "Invalid choice! Plea
 # Object-Oriented Programming (OOP) is important in Python because it provides a structured and modular approach to programming, allowing developers to create reusable and maintainable code. OOP allows you to model real-world entities as objects, which can have attributes (data) and methods (functions) that operate on that data. This promotes encapsulation, where the internal state of an object is hidden from the outside world and can only be accessed through defined interfaces. OOP also supports inheritance, which allows you to create new classes based on existing ones, promoting code reuse and reducing redundancy. Additionally, OOP enables polymorphism, allowing objects of different classes to be treated as instances of a common superclass, making it easier to write flexible and extensible code. Overall, OOP concepts help to improve code organization, readability, and maintainability in Python programming.
 # Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects, which are instances of classes. In Python, OOP is supported through the use of classes and objects. A class is a blueprint for creating objects, while an object is an instance of a class that can have its own attributes and methods. OOP allows for encapsulation, inheritance, and polymorphism, which are key principles that help to promote code reusability, modularity, and maintainability. By using OOP concepts in Python, you can create more organized and structured code that is easier to understand and maintain over time.
 # In Python, you can define a class using the class keyword, followed by the name of the class and a colon. Inside the class, you can define attributes (variables) and methods (functions) that belong to the class. For example:
-class definitions
+class definitions:
     def person(name, age):
         print(f"Name: {name}, Age: {age}")
 definitions.person("Alice", 30)  # This will print "Name: Alice, Age: 30"
@@ -411,7 +411,7 @@ print(person1.greet())  # This will print "Hello, my name is Alice and I am 30 y
 person2 = Person("Bob", 25)
 print(person2.greet())  # This will print "Hello, my name is Bob and I am 25 years old."
 # In this example, we create two instances of the Person class, person1 and person2, with different names and ages. We then call the greet method on each instance to see the personalized greeting message based on the attributes of each object. This demonstrates how OOP allows us to create objects with their own state and behavior, making our code more organized and reusable.
-alice.changeName("malice")
+alice.changeName("malice") # type: ignore
 # here we are trying to change the name of alice object to malice, but we have not defined a method called changeName in the Person class. To fix this, we can add a method to the Person class that allows us to change the name attribute. For example:
 class Person:
     def __init__(self, name, age):
