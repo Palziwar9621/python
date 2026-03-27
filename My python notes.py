@@ -317,8 +317,6 @@ print(avg_lambda(10, 20))  # This will print 15.0
 # we can define a function that takes a lambda function as an argument and applies it to a list of values. For example:
 def apply_function(func, values):
     return [func(x) for x in values]
-
-
 # Example usage:
 numbers = [1, 2, 3, 4, 5]
 doubled = apply_function(lambda x: x * 2, numbers)

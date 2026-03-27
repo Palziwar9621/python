@@ -17,12 +17,13 @@ class Solution:
         return s
 class Solution:
     def reverse(self, x: int):
+        b=x
         if x<0:
             x=-x
         a=str(x)
         s=a[::-1]
         s=int(s)
-        if x<0:
+        if b<0:
             s=-s
         if s<-2**31 or s>2**31-1:
             return 0
@@ -36,7 +37,7 @@ class Solution:
         b=str(x)
         s=int(b[::-1])
         return s==a
-#29. Pow(x, n)
+#50. Pow(x, n)
 class Solution:
     def myPow(self, x: float, n: int) -> float:
         a=x**n
@@ -50,8 +51,8 @@ class Solution:
 #69. Sqrt(x)
 class Solution:
     def mySqrt(self, x: int) -> int:
-        import cmath
-        a=int(sqrt(x))
+        import math
+        a=int(math.sqrt(x))
         if x<0 or x>2**31 - 1:
             return 0
         return a
@@ -125,3 +126,61 @@ class Solution:
                 return True
             else:
                 return False
+#504. Base 7
+class Solution:
+    def convertToBase7(self, num: int) -> str:
+        s=""
+        a=num
+        if num==0:
+            return "0"
+        if num<0:
+            num=-num
+        while num>0:
+            n=num%7
+            num=num//7
+            s=str(n)+s
+        if a<0:
+            s="-"+s
+        return s
+#593. Valid Square
+class Solution:
+    def validSquare(self, p1: List[int], p2: List[int], p3: List[int], p4: List[int]) -> bool:
+        def dist(a,b):
+            return (a[0]-b[0])**2+(a[1]-b[1])**2
+        points=[p1,p2,p3,p4]
+        s=set()
+        for i in range(4):
+            for j in range (i+1,4):
+                d=dist(points[j],points[i])
+                if d==0:
+                    return False
+                s.add(d)
+        return len(s)==2
+#633. Sum of Square Numbers
+class Solution:
+    def judgeSquareSum(self, c: int) -> bool:
+        import math
+        a=0
+        b=int(math.sqrt(c))
+        while a<=b:
+            s=a*a+b*b
+            if s==c:
+                return True
+            elif s<c:
+                a+=1
+            else:
+                b-=1
+        return False
+#202. Happy Number
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        p=set()
+        while n!=1 and n not in p:
+            p.add(n)
+            a=str(n)
+            s=0
+            for i in range(len(a)):
+                b=int(a[i])**2
+                s+=b
+            n=s
+        return n==1
