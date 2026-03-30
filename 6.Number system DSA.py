@@ -205,3 +205,24 @@ class Solution:
                 if k==len(num):
                     return True
         return False
+#400: Nth digit 
+class Solution:
+    def findNthDigit(self, n: int) -> int:
+        digit_length = 1
+        count = 9
+        start = 1
+
+        # Step 1: Find which digit-length block contains n
+        while n > digit_length * count:
+            n -= digit_length * count
+            digit_length += 1
+            count *= 10
+            start *= 10
+
+        # Step 2: Find the actual number
+        number = start + (n - 1) // digit_length
+
+        # Step 3: Find the digit inside that number
+        digit_index = (n - 1) % digit_length
+
+        return int(str(number)[digit_index])
