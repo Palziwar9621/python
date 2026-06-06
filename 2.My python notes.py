@@ -1,3 +1,223 @@
+#print 
+print("hello world") # this will print "hello world" to the console
+#print is a built-in function in Python that is used to output data to the console. It can take multiple arguments and will print them separated by a space by default. You can also specify a different separator using the sep parameter, and you can specify an end character using the end parameter. For example:
+print("hello", "world", sep="-") # this will print "hello-world" to the console
+print("hello", end=" ") # this will print "hello " to the console without a newline at the end
+print("world") # this will print "world" to the console on the same line as "hello" because we specified end=" " in the previous print statement 
+#data types in python
+#basic types: int, float, str, bool, complex
+#container types: list, tuple, set, dict
+#user defined types: classes and objects
+#type() function is used to check the type of a variable or value in Python. It returns the type of the object passed as an argument. For example:
+x = 10
+print(type(x)) # this will print <class 'int'> to the console because x is an integer
+#comments in python
+# single line comment
+# this is a single line comment in python
+# multi line comment
+"""
+This is a multi line comment in python
+"""
+#variables in python
+x = 10 # this is an integer variable
+y = 3.14 # this is a float variable
+name = "Alice" # this is a string variable
+is_student = True # this is a boolean variable
+# we can also assign multiple variables in a single line    
+a, b, c = 1, 2.5, "hello" # this will assign 1 to a, 2.5 to b, and "hello" to c
+#dynamic typing in python
+# In Python, you can change the type of a variable by assigning a new value to it. For example:
+x = 10 # x is an integer
+# dynamic binding allows us to change the type of a variable by assigning a new value to it
+x = "hello" # now x is a string
+#keywords in python
+# and, as, assert, break, class, continue, def, del, elif,
+# keywords are reserved words in Python that have a specific meaning and cannot be used as variable names or identifiers. They are used to define the structure and syntax of the language, and they play a crucial role in how Python code is written and executed. It is important to be familiar with the keywords in Python to avoid syntax errors and to write code that is clear and understandable.
+#python keywords are case-sensitive, which means that they must be written in lowercase. For example, "if" is a keyword, but "If" or "IF" would not be recognized as a keyword and would result in a syntax error if used in the code. It is important to use the correct case when writing Python code to ensure that it is syntactically correct and functions as intended.
+import keyword
+print(keyword.kwlist) # this will print a list of all the keywords in Python        
+['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+#identifiers in python
+# An identifier in Python is a name used to identify a variable, function, class, module, or other object. It must follow certain rules:    
+#1. An identifier can only contain letters (a-z, A-Z), digits (0-9), and underscores (_).
+#2. An identifier cannot start with a digit.
+#3. An identifier cannot be a keyword in Python.
+#4. An identifier is case-sensitive, which means that "myVariable" and "myvariable" would be considered different identifiers.
+# input and type conversion in python
+name = input("Enter your name: ") # this will prompt the user to enter their name and store it in the variable name 
+# The input() function in Python is used to take input from the user. It reads a line of text from the console and returns it as a string. If you want to convert the input to a different data type, you can use type conversion functions such as int(), float(), or bool(). For example: 
+age = int(input("Enter your age: ")) # this will prompt the user to enter their age, convert it to an integer, and store it in the variable age
+# type conversion is the process of converting a value from one data type to another. In Python, you can use built-in functions to perform type conversion. For example, you can use int() to convert a string to an integer, float() to convert a string to a float, and str() to convert a value to a string. It is important to ensure that the value being converted is compatible with the target data type to avoid errors during type conversion. For example, trying to convert a non-numeric string to an integer using int() will raise a ValueError. It is always a good practice to handle potential exceptions that may arise during type conversion to ensure that your code is robust and can handle unexpected input gracefully.
+# implicit type conversion, also known as type coercion, is the automatic conversion of one data type to another by the Python interpreter when performing operations that involve different data types. For example, if you add an integer and a float together, Python will automatically convert the integer to a float before performing the addition. This allows for seamless operations between different data types without requiring explicit type conversion by the programmer. However, it is important to be aware of implicit type conversion and how it may affect the behavior of your code, especially when working with mixed data types, to avoid unintended consequences or errors.
+# for example:
+x = 10 # x is an integer
+y = 3.14 # y is a float
+z = x + y # z will be a float because of implicit type conversion
+# explicit type conversion, also known as type casting, is the process of manually converting a value from one data type to another using built-in functions in Python. For example, you can use int() to convert a string to an integer, float() to convert a string to a float, and str() to convert a value to a string. Explicit type conversion allows you to control the data types of your variables and ensure that they are compatible with the operations you want to perform. It is important to use explicit type conversion when necessary to avoid errors and ensure that your code behaves as expected.
+# for example:
+x = "10" # x is a string
+y = int(x) # y will be an integer because of explicit type conversion
+print(y) # this will print 10 to the console
+# literals in python
+# A literal in Python is a fixed value that is directly represented in the code. It can be of various data types, such as integers, floats, strings, booleans, and more. For example:
+integer_literal = 42 # this is an integer literal
+float_literal = 3.14 # this is a float literal
+string_literal = "Hello, World!" # this is a string literal
+boolean_literal = True # this is a boolean literal
+# numeric literals can be written in different formats, such as decimal, binary, octal, and hexadecimal. For example:
+decimal_literal = 42
+binary_literal = 0b1010
+octal_literal = 0o52
+hexadecimal_literal = 0x2A
+#complex literals are written in the form of a + bj, where a is the real part and b is the imaginary part. For example:
+complex_literal = 2 + 3j
+print(complex_literal,complex_literal.imag,complex_literal.real) # this will print (2+3j) to the console and 3.0 and 2.0 respectively
+#string literals can be enclosed in single quotes (' '), double quotes (" "), or triple quotes (''' ''' or """ """). For example:   
+single_quote_literal = 'Hello'
+double_quote_literal = "Hello"
+triple_quote_literal = '''Hello''' # this is a triple quote literal that can span multiple lines
+#multiple line string literals can be created using triple quotes. For example:
+multi_line_string_literal = """This is a multi-line string literal"""
+print(multi_line_string_literal) # this will print the multi-line string to the console
+#unicode literals are written using the \u or \U escape sequences followed by the hexadecimal code point of the character. For example:
+unicode_literal = "\u03A9" # this is a unicode literal for the Greek letter Omega
+print(unicode_literal) # this will print Ω to the console
+# raw string literals are prefixed with an 'r' or 'R' and treat backslashes as literal characters. For example:
+raw_string_literal = r"C:\Users\Username\Documents" # this is a raw string literal that will treat backslashes as literal characters
+print(raw_string_literal) # this will print C:\Users\Username\Documents to the console without interpreting the backslashes as escape characters
+#boolean literals are simply the values True and False, which represent the two possible states of a boolean variable. For example: 
+is_raining = True # this is a boolean literal representing the state of raining
+is_sunny = False # this is a boolean literal representing the state of sunny
+# None is a special literal in Python that represents the absence of a value or a null value. It is often used to indicate that a variable has no value or that a function does not return anything. For example:
+result = None # this is a None literal representing the absence of a value
+# operators in python
+# arithmetic operators: +, -, *, /, %, **, //
+#** is the exponentiation operator, which raises the left operand to the power of the right operand. For example:
+x = 2
+y = 3
+z = x ** y # z will be 8 because 2 raised to the power of 3 is 8
+#// is the floor division operator, which performs integer division and returns the largest integer less than or equal to the result. For example:
+x = 7
+y = 3
+z = x // y # z will be 2 because 7 divided by 3 is 2.333... and the floor division operator returns the largest integer less than or equal to that result, which is 2
+# comparison operators: ==, !=, >, <, >=, <=
+# logical operators: and, or, not
+# assignment operators: =, +=, -=, *=, /=, %=, **=, //=
+# bitwise operators: &, |, ^, ~, <<, >>
+#bitwise operators are used to perform bitwise operations on integers. For example:
+x = 5 # in binary: 0101
+y = 3 # in binary: 0011
+z = x & y # z will be 1 because 0101 & 0011 is 0001(and)
+z = x | y # z will be 7 because 0101 | 0011 is 0111(or)
+z = x ^ y # z will be 6 because 0101 ^ 0011 is 0110(xor)
+z = ~x # z will be -6 because ~0101 is 1010 in two's complement representation, which is -6 in decimal (not)
+z = x << 1 # z will be 10 because 0101 << 1 is 1010(left shift)
+z = x >> 1 # z will be 2 because 0101 >> 1 is 0010(right shift)
+# membership operators: in, not in
+# membership operators are used to test if a value is present in a sequence (such as a list, tuple, or string) or not. For example:
+fruits = ["apple", "banana", "cherry"]
+print("banana" in fruits) # this will print True because "banana" is in the fruits list
+print("grape" in fruits) # this will print False because "grape" is not in the fruits list
+
+# identity operators: is, is not
+# identity operators are used to compare the memory locations of two objects. The is operator returns True if both operands refer to the same object in memory, while the is not operator returns True if both operands do not refer to the same object in memory. For example:
+a = [1, 2, 3]
+b = a
+print(a is b) # this will print True because both a and b refer to the same object in memory
+print(a is not b) # this will print False because both a and b refer to the same object in memory   
+c = [1, 2, 3]
+print(a is c) # this will print False because a and c refer to different objects in memory, even though they have the same content
+# operator precedence in python
+# precedence order: 1. (), 2. **, 3. +x, -x, 4. *, /, //, %, 5. +, -, 6. <<, >>, 7. &, 8. ^, 9. |, 10. comparison operators, 11. not, 12. and, 13. or
+# if else statements in python
+x = 10
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is not greater than 5")
+# nested if else statements in python
+x = 10
+if x > 5:
+    if x < 15:
+        print("x is between 5 and 15")
+    else:
+        print("x is greater than or equal to 15")
+else:
+    print("x is less than or equal to 5")
+#else if statements in python
+x = 10
+if x > 15:
+    print("x is greater than 15")
+elif x > 5:
+    print("x is greater than 5 but less than or equal to 15")
+else:
+    print("x is less than or equal to 5")
+#indentation in python
+# In Python, indentation is used to define the scope of loops, functions, and other code blocks. It is important to use consistent indentation throughout your code to avoid syntax errors. The standard practice is to use four spaces for each level of indentation. For example:
+if x > 5:
+    print("x is greater than 5") # this line is indented with four spaces and is part of the if block   
+else:
+    print("x is not greater than 5") # this line is indented with four spaces and is part of the else block 
+#while loop in python
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+# guessing game using while loop and if else statements
+import random
+number_to_guess = random.randint(1, 100)
+guess=int(input("Guess a number between 1 and 100: "))
+guess_times=1
+while guess != number_to_guess:
+    if number_to_guess < guess:
+        print("higer,try lower")
+    else:
+        print("lower, try higher")
+    guess_times+=1
+    guess=int(input("Guess a number between 1 and 100: "))
+print(f"Congratulations! You guessed the number in {guess_times} attempts.")
+#for loop in python
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+# range function in python
+range(0,5) # this will create a range object that represents the sequence of numbers from 0 to 4
+list(range(15)) # this will create a list of numbers from 0 to 14
+range(1,11,2) # this will create a range object that represents the sequence of odd numbers from 1 to 10
+list(range(1,11,2)) # this will create a list of odd numbers from 1 to 10
+# sequences in python
+["apple", "banana", "cherry"] # this is a list, which is a mutable sequence in Python
+("apple", "banana", "cherry") # this is a tuple, which is an immutable sequence in Python
+#for loop in python
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+# you can use for with range, strings, lists, tuples, dictionaries, sets, and other iterable objects in Python. For example:
+for i in range(5):
+    print(i) # this will print the numbers from 0 to 4 to the console
+for char in "hello":
+    print(char) # this will print each character in the string "hello" to the console
+for key in {"name": "Alice", "age": 30}:
+    print(key) # this will print the keys of the dictionary to the console  
+for value in {"name": "Alice", "age": 30}.values():
+    print(value) # this will print the values of the dictionary to the console
+for item in {1, 2, 3}:
+    print(item) # this will print each item in the set to the console
+# nested loops in python
+rows=int(input("enter number of rows:"))
+for i in range(1,rows+1):
+    for j in range(0,i):
+        print("*",end="")
+    print() # this will print a new line after each row of stars
+# break statement in python
+for i in range(10):
+    if i == 5:
+        break # this will exit the loop when i is equal to 5
+    print(i) # this will print the numbers from 0 to 4 to the console
+# in real life world, loop is used to perform a task repeatedly until a certain condition is met. For example, you might use a loop to process a list of items, to read data from a file, or to perform a calculation until a specific result is achieved. Loops are an essential part of programming and allow us to automate repetitive tasks and work with large amounts of data efficiently.
+# for example, you might use loop to make containers on online shopping sites to display products, to read data from a database, or to perform calculations for each item in a list. Loops are a fundamental concept in programming and are used in a wide variety of applications to automate tasks and process data efficiently.
+# sets in python
+my_set = {1, 2, 3} # this creates a set with the elements 1, 2, and 3
 cities={"tokyo","madrid","berlin","delhi"}
 cities2={"tokyo","madrid","kabul","seoul"}
 cities3=cities.union(cities2) #union of 2 sets

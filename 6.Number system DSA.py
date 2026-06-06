@@ -218,5 +218,4 @@ class Solution:
             start *= 10
         number = start + (n - 1)//digit_length
         digit_index = (n - 1) % digit_length
-
         return int(str(number)[digit_index])

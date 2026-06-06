@@ -1,6 +1,5 @@
-num="6789"
-for i in range(len(num)):
-    for j in range(i+1,len(num)):
-        split_num=num[:i]
-        split_num2=num[j:]
-        print(split_num)
+rows=int(input("enter number of rows:"))
+for i in range(1,rows+1):
+    for j in range(0,i):
+        print("*",end="")
+    print() # this will print a new line after each row of stars
