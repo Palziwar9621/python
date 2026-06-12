@@ -209,13 +209,225 @@ for i in range(1,rows+1):
     for j in range(0,i):
         print("*",end="")
     print() # this will print a new line after each row of stars
+    print(i) # this will print the numbers from 0 to 4 to the console
+# in real life world, loop is used to perform a task repeatedly until a certain condition is met. For example, you might use a loop to process a list of items, to read data from a file, or to perform a calculation until a specific result is achieved. Loops are an essential part of programming and allow us to automate repetitive tasks and work with large amounts of data efficiently.
+# for example, you might use loop to make containers on online shopping sites to display products, to read data from a database, or to perform calculations for each item in a list. Loops are a fundamental concept in programming and are used in a wide variety of applications to automate tasks and process data efficiently.
 # break statement in python
 for i in range(10):
     if i == 5:
         break # this will exit the loop when i is equal to 5
-    print(i) # this will print the numbers from 0 to 4 to the console
-# in real life world, loop is used to perform a task repeatedly until a certain condition is met. For example, you might use a loop to process a list of items, to read data from a file, or to perform a calculation until a specific result is achieved. Loops are an essential part of programming and allow us to automate repetitive tasks and work with large amounts of data efficiently.
-# for example, you might use loop to make containers on online shopping sites to display products, to read data from a database, or to perform calculations for each item in a list. Loops are a fundamental concept in programming and are used in a wide variety of applications to automate tasks and process data efficiently.
+#break can be used in linear search algorithm to exit the loop when the target element is found, which can improve the efficiency of the search by avoiding unnecessary iterations through the remaining elements in the list. For example:
+def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i # return the index of the target element
+    return -1 # return -1 if the target element is not found
+# continue statement in python
+for i in range(10):
+    if i == 5:
+        continue # this will skip the rest of the loop body when i is equal to 5    
+    print(i) # this will print the numbers from 0 to 9 to the console, except for 5
+#continue can be used in a loop to skip the current iteration and move on to the next one. For example, you might use continue in a loop that processes a list of items to skip over any items that do not meet a certain condition, allowing you to focus on processing only the relevant items in the list. This can help improve the efficiency of your code by avoiding unnecessary processing of irrelevant items. For example:
+def process_items(items):
+    for item in items:
+        if not is_relevant(item):
+            continue # skip processing this item if it is not relevant
+        # process the relevant item here
+        print(item)
+# pass statement in python
+for i in range(10):
+    if i == 5:
+        pass # this will do nothing when i is equal to 5
+    print(i) # this will print the numbers from 0 to 9 to the console, including 5
+# pass can be used as a placeholder in a loop or function definition when you want to define the structure of your code but have not yet implemented the logic. It allows you to write syntactically correct code without having to fill in the details immediately, which can be useful during the development process when you are still working on the overall design of your code.
+#built in functions in python
+# len() function is used to get the length of a sequence (such as a string, list, or tuple) or a collection (such as a dictionary or set). For example:
+length = len("Hello, World!") # returns 13
+length = len([1, 2, 3, 4, 5]) # returns 5
+length = len({1, 2, 3}) # returns 3
+# print, input, type, int,
+#abs() function is used to get the absolute value of a number. For example:
+absolute_value = abs(-5) # returns 5
+# pow function is used to calculate the power of a number. For example:
+power = pow(2, 3) # returns 8 because 2 raised to the power of 3 is 8
+# min/max function is used to get the minimum or maximum value from a sequence of numbers. For example:
+minimum = min(1, 2, 3) # returns 1
+maximum = max("kolkata") # returns "t" because it is the maximum character in the string based on ASCII values
+#round function is used to round a number to a specified number of decimal places. For example:
+rounded_value = round(3.14159, 2) # returns 3.14 because it rounds the number to 2 decimal places
+#divmod function is used to get the quotient and remainder of a division operation. For example:
+quotient, remainder = divmod(10, 3) # returns (3, 1) because 10 divided by 3 is 3 with a remainder of 1
+#bin/oct/hex functions are used to convert an integer to its binary, octal, or hexadecimal representation. For example:
+binary_representation = bin(10) # returns '0b1010' because 10 in binary is 1010
+octal_representation = oct(10) # returns '0o12' because 10 in octal is 12
+hexadecimal_representation = hex(10) # returns '0xa' because 10 in hexadecimal is a
+#id function is used to get the memory address of an object. For example:
+x = 10
+id(x) # this will return the memory address of the integer object 10 in Python, which is a unique identifier for that object in memory. The id() function can be useful for understanding how objects are stored and referenced in Python, especially when working with mutable and immutable data types.
+#ord function is used to get the ASCII value of a character. For example:
+ascii_value = ord('A') # returns 65 because the ASCII value of 'A' is 65
+#sum function is used to get the sum of a sequence of numbers. For example:
+total = sum([1, 2, 3, 4, 5]) # returns 15 because the sum of the numbers in the list is 15
+# help function is used to get the documentation of a function, class, or module. For example:
+help(len) # this will display the documentation for the len() function in the console
+#built in modules in python
+#Modules are pre-written code that you can use in your Python programs to perform specific tasks. They are organized into libraries and can be imported into your code using the import statement. Some commonly used built-in modules in Python include:
+# math module: provides mathematical functions and constants
+import math
+print(math.sqrt(16)) # this will print 4.0 to the console because the square root of 16 is 4
+# random module: provides functions for generating random numbers and performing random operations
+import random
+print(random.randint(1, 10)) # this will print a random integer between 1 and 10 to the console
+random.shuffle([1, 2, 3, 4, 5]) # this will shuffle the list [1, 2, 3, 4, 5] in place and return None 
+# time module: provides functions for working with time and dates
+import time
+print(time.time()) # this will print the current time in seconds since the epoch (January 1, 1970) to the console
+#os module: provides functions for interacting with the operating system
+import os
+print(os.getcwd()) # this will print the current working directory to the console
+#string in python
+# A string in Python is a sequence of Unicode characters enclosed in single quotes (' '), double quotes (" "), or triple quotes (''' ''' or """ """). Strings are immutable, which means that once a string is created, it cannot be modified. You can perform various operations on strings, such as concatenation, slicing, and formatting.
+# creating strings in python
+string1 = 'Hello, World!' # using single quotes
+string2 = "Hello, World!" # using double quotes
+string3 = '''Hello, World!''' # using triple quotes, for multi-line strings
+string4 = """Hello, World!""" # using triple quotes, for multi-line strings
+#accessing characters in a string
+print(string1[0]) # this will print the first character of string1, which is 'H'
+print(string1[-1]) # this will print the last character of string1, which is '!'
+#slicing strings in python
+print(string1[0:5]) # this will print the substring 'Hello' from string1
+print(string1[0:12:2]) # this will print the substring 'Hlo ol' from string1 by slicing every second character
+print(string1[::-1]) # this will print the reverse of string1, which is '!dlroW ,olleH'
+#editing and deleting strings in python
+# since strings are immutable in Python, you cannot edit or delete individual characters in a string. However, you can create a new string by concatenating parts of the original string or by using string methods to modify the string. For example:
+string1 = "Hello, World!"
+string2 = string1[:5] + " Python!" # this will create a new string 'Hello Python!' by concatenating the first 5 characters of string1 with the new substring ' Python!'
+del string1 # this will delete the string1 variable from memory
+# operations on strings in python
+string1 = "Hello, World!"
+string2 = "Python is great!"
+#arithmetic operations on strings
+concatenated_string = string1 + " " + string2 # this will concatenate string1 and string2 with a space in between
+print(concatenated_string) # this will print 'Hello, World! Python is great!' to the console
+print(string1 * 3) # this will print 'Hello, World!Hello, World!Hello, World!' to the console by repeating string1 three times
+#relational operations on strings
+print(string1 == string2) # this will print False because string1 and string2 are not equal
+print(string1 != string2) # this will print True because string1 and string2 are not equal
+print(string1 > string2) # this will print False because string1 is not greater than string2 based on lexicographical order
+print(string1 < string2) # this will print True because string1 is less than string2 based on lexicographical order
+#membership operations on strings
+print("Hello" in string1) # this will print True because the substring "Hello" is present in string1
+print("Python" in string1) # this will print False because the substring "Python" is not present in string1
+#logical operations on strings
+"hello" and "world" # this will not work because "hello" and "world" are not boolean values, they are strings. Logical operations like 'and' and 'or' are used with boolean values (True or False) to perform logical operations. For example:
+"" or "world" # this will return "world" because the empty string "" is considered False in a boolean context, so the 'or' operator returns the second operand "world" which is considered True
+"hello" or "" # this will return "hello" because the 'or' operator returns the first operand "hello" which is considered True, and it does not evaluate the second operand "" since the first operand is already True
+not "hello" # this will return False because the 'not' operator negates the truth value of the operand, and since "hello" is considered True in a boolean context, 'not "hello"' will return False
+not "" # this will return True because the 'not' operator negates the truth value of the operand, and since the empty string "" is considered False in a boolean context, 'not ""' will return True
+#loops with strings in python
+string1 = "Hello, World!"
+for char in string1:
+    print(char) # this will print each character in string1 on a new line
+#string methods in python
+string1 = "Hello, World!"
+#common functions
+print(len(string1)) # this will print the length of string1, which is 13
+max(string1) # this will print the maximum character in string1 based on ASCII values, which is 'r'
+min(string1) # this will print the minimum character in string1 based on ASCII values, which is ' '
+sorted_string = sorted(string1) # this will return a list of characters in string1 sorted in ascending order based on ASCII values
+print(sorted_string) # this will print the sorted list of characters to the console
+
+#string methods
+print(string1.upper()) # this will print 'HELLO, WORLD!' to the console by converting all characters in string1 to uppercase
+print(string1.lower()) # this will print 'hello, world!' to the console by converting   all characters in string1 to lowercase
+print(string1.title()) # this will print 'Hello, World!' to the console by converting the first character of each word in string1 to uppercase and the rest to lowercase
+print(string1.capitalize()) # this will print 'Hello, world!' to the console by converting the first character of string1 to uppercase and the rest to lowercase
+print(string1.strip()) # this will print 'Hello, World!' to the console by removing any leading and trailing whitespace from string1
+print(string1.replace("Hello", "Hi")) # this will print 'Hi, World!' to the console by replacing the substring "Hello" with "Hi" in string1
+print(string1.split(", ")) # this will print ['Hello', 'World!'] to the console by splitting string1 into a list of substrings based on the delimiter ", "
+print(string1.join(["Hello", "World"])) # this will print 'HelloHello, World!World' to the console by joining the list of strings ["Hello", "World"] with string1 as the separator
+print(string1.find("World")) # this will print 7 to the console because the substring "World" starts at index 7 in string1
+print(string1.index("World")) # this will also print 7 to the console because the substring "World" starts at index 7 in string1, but it will raise a ValueError if the substring is not found, while find() will return -1
+print(string1.count("o")) # this will print 2 to the console because the character "o" appears twice in string1
+print(string1.startswith("Hello")) # this will print True because string1 starts with the substring "Hello"
+print(string1.endswith("!")) # this will print True because string1 ends with the character "!"
+#format method in python
+name = "Alice"
+age = 30
+print(f"Hello, my name is {name} and I am {age} years old.") # this will print 'Hello, my name is Alice and I am 30 years old.' to the console by using f-string formatting to insert the values of name and age into the string
+print(string1.isalpha()) # this will print False because string1 contains characters that are not alphabetic (such as the comma and space)
+print(string1.isdigit()) # this will print False because string1 contains characters that are not digits (such as the letters and punctuation)
+print(string1.isalnum()) # this will print False because string1 contains characters that are not alphanumeric (such as the comma and space)
+print(string1.isspace()) # this will print False because string1 contains characters that are not whitespace (such as the letters and punctuation)
+print(string1.islower()) # this will print False because string1 contains characters that are not lowercase (such as the uppercase letters)
+print(string1.isupper()) # this will print False because string1 contains characters that are not uppercase (such as the lowercase letters)
+print(string1.istitle()) # this will print False because string1 does not have the first character of each word in uppercase and the rest in lowercase (the comma and space are not considered as part of the words)
+#lists in python
+# A list in Python is a mutable, ordered collection of items that can contain elements of different data types. Lists are defined using square brackets [] and can be modified after creation.
+#1. array homogenous, list heterogenous
+#2. Array stores data
+# list 
+#  For example:
+my_list = [1, 2, 3, "hello", True] # this creates a list with the elements 1, 2, 3, "hello", and True
+print(my_list) # this will print the entire list to the console
+my_list[0] # this will print the first element of the list, which is 1
+my_list[-1] # this will print the last element of the list, which is True
+my_list[1:4] # this will print the sublist [2, 3, "hello"] from the list by slicing it from index 1 to index 3 (index 4 is not included)
+my_list[::-1] # this will print the reverse of the list, which is [True, "hello", 3, 2, 1]
+L=[1,2,"lol",[4,5]]
+x=L[3][0] # this will print 4 because L[3] is the sublist [4, 5] and L[3][0] is the first element of that sublist, which is 4
+L1=[[[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]]
+x=L1[0][1][0] # this will print 4 because L1[0] is the first element of L1, which is [[1, 2, 3], [4, 5, 6]], L1[0][1] is the second element of that sublist, which is [4, 5, 6], and L1[0][1][0] is the first element of that sublist, which is 4
+#lists are mutable, which means you can change their content after they have been created. For example:
+my_list = [1, 2, 3]
+my_list[0] = 10 # this will change the first element of the list to 10
+print(my_list) # this will print [10, 2, 3] to the console
+my_list[1:4] = [20, 30, 40] # this will change the sublist from index 1 to index 3 to [20, 30, 40]
+print(my_list) # this will print [10, 20, 30, 40] to the console
+my_list.append(50) # this will add the element 50 to the end of the list, it adds only 1 item to the list
+print(my_list) # this will print [10, 20, 30, 40, 50] to the console
+my_list.extend([60, 70]) # this will add the elements 60 and 70 to the end of the list by extending the list with another iterable, it adds multiple items to the list
+print(my_list) # this will print [10, 20, 30, 40, 50] to the console
+my_list.insert(1, 15) # this will insert the element 15 at index 1 in the list
+print(my_list) # this will print [10, 15, 20, 30, 40, 50] to the console
+my_list.remove(20) # this will remove the first occurrence of the element 20 from the list
+print(my_list) # this will print [10, 15, 30, 40, 50] to the console
+my_list.pop() # this will remove and return the last element of the list, which is 50
+print(my_list) # this will print [10, 15, 30, 40] to the console
+my_list.pop(1) # this will remove and return the element at index 1 of the list, which is 15
+print(my_list) # this will print [10, 30, 40] to the console
+print(my_list) # this will print [] to the console
+del my_list[0] # this will delete the element at index 0 of the list, which is 10
+print(my_list) # this will print [30, 40] to the console
+del my_list # this will delete the list variable from memory
+my_list = [1, 2, 3]
+my_list.clear() # this will remove all elements from the list, leaving it empty
+print(my_list) # this will print [] to the console
+# operations on lists in python
+my_list = [1, 2, 3]
+my_list + [4, 5] # this will return a new list [1, 2, 3, 4, 5] by concatenating my_list with another list [4, 5]
+my_list * 2 # this will return a new list [1, 2, 3, 1, 2, 3] by repeating my_list twice
+for item in my_list:
+    print(item) # this will print each item in my_list on a new line
+4 in my_list # this will return True because the element 4 is present in my_list
+5 not in my_list # this will return True because the element 5 is not present in my_list
+# functions on lists in python
+len(my_list) # this will return the length of my_list, which is 3
+max(my_list) # this will return the maximum element in my_list, which is 3
+min(my_list) # this will return the minimum element in my_list, which is 1
+sorted_list = sorted(my_list) # this will return a new list [1, 2, 3] which is the sorted version of my_list
+sorted_list_descending = sorted(my_list, reverse=True) # this will return a new list [3, 2, 1] which is the sorted version of my_list in descending order   
+my_list.sort() # this will sort my_list in place, changing it to [1, 2, 3]
+my_list.sort(reverse=True) # this will sort my_list in place in descending order, changing it to [3, 2, 1]
+my_list.reverse() # this will reverse the order of the elements in my_list in place, changing it to [1, 2, 3]
+my_list.index(2) # this will return the index of the first occurrence of the element 2 in my_list, which is 1
+my_list.count(2) # this will return the number of occurrences of the element 2
+
+
+
+
+
 # sets in python
 my_set = {1, 2, 3} # this creates a set with the elements 1, 2, and 3
 cities={"tokyo","madrid","berlin","delhi"}
