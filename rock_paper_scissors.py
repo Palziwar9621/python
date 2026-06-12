@@ -11,6 +11,7 @@ else:
     print(f"Computer chose: {computer_choice}")
 
     # Method 1 - if/elif
+    print("\n--- Method 1 (if/elif) ---")
     if player_choice == computer_choice:
         print("It's a tie!")
     elif (player_choice == "stone" and computer_choice == "scissors") or \
@@ -20,7 +21,8 @@ else:
     else:
         print("Computer wins!")
 
-    # Method 2 - matrix
+    # Method 2 - dictionary matrix
+    print("\n--- Method 2 (matrix) ---")
     outcome_matrix = {
         ("stone", "scissors"): "You win!",
         ("scissors", "paper"): "You win!",
@@ -32,5 +34,4 @@ else:
         ("scissors", "scissors"): "It's a tie!",
         ("paper", "paper"): "It's a tie!"
     }
-
     print(outcome_matrix[(player_choice, computer_choice)])

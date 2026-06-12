@@ -15,18 +15,25 @@ options = [
 ]
 
 answers = ["a", "b", "c", "a", "d"]
-
+valid_options = ["a", "b", "c", "d"]
 score = 0
 
 for i in range(5):
     print("\n" + q[i])
     for opt in options[i]:
         print(opt)
-    user = input("Your answer (a/b/c/d): ").strip().lower()
+
+    while True:
+        user = input("Your answer (a/b/c/d): ").strip().lower()
+        if user in valid_options:
+            break
+        print("Invalid input! Please enter a, b, c or d.")
+
     if user == answers[i]:
         print("Correct! ✓")
         score += 1
     else:
-        print(f"Wrong! Correct answer was: {answers[i]}")
+        correct_index = ord(answers[i]) - ord('a')
+        print(f"Wrong! Correct answer was: {options[i][correct_index]}")
 
 print(f"\nYour score: {score}/5")
