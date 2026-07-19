@@ -150,7 +150,7 @@ for i in range(10):
 # real world use: skip irrelevant items while processing a list
 def process_items(items):
     for item in items:
-        if not is_relevant(item):
+        if not is_relevant(item): # type: ignore
             continue   # skip non-relevant items
         print(item)    # process only relevant items
 

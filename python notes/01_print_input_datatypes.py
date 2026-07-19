@@ -130,3 +130,6 @@ is_sunny = False
 # None - represents absence of a value / null value
 # used when a variable has no value or function returns nothing
 result = None
+
+# mutable data types->List/Sets/Dictionary
+# immutable data types-> str/int/tuples/float/boolean/complex

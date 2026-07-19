@@ -96,6 +96,9 @@ print(f"Hello, my name is {name} and I am {age} years old.")
 # Mutable, ordered collection - can contain different data types
 # 1. array - homogenous (same type)
 # 2. list  - heterogenous (different types)
+# array stores data in continous meanwhile list do not.
+# arrays are much faster due to this.
+# lists are more programmer friendly.
 
 my_list = [1, 2, 3, "hello", True]
 print(my_list)
@@ -104,14 +107,15 @@ print(my_list[-1])   # True (last element)
 print(my_list[1:4])  # [2, 3, 'hello']
 print(my_list[::-1]) # reversed list
 
-# nested lists
-L = [1, 2, "lol", [4, 5]]
+# nested lists (multi-dimensional)
+L = [1, 2, "lol", [4, 5]] # 2-d
 x = L[3][0]  # 4 - accessing nested list element
 
-L1 = [[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]
+L1 = [[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]] # 3-d
 x = L1[0][1][0]  # 4
 
 # lists are mutable - can change after creation
+
 my_list = [1, 2, 3]
 my_list[0] = 10              # change element at index 0
 my_list[1:4] = [20, 30, 40] # change a slice
@@ -147,12 +151,50 @@ print(my_list.index(2))       # index of first occurrence of 2
 print(my_list.count(2))       # number of occurrences of 2
 
 # ============================================================
+# TUPLES
+# ============================================================
+# creating a tuple
+T1=(1,2,"ab",True)
+T=(1,2,3,4,5)
+T_str=("abc","cat","dog")
+# to create empty tuple and single item tuple
+T2=tuple()
+print(type(T2))
+T3=("hello",)
+# Access
+print(T1[1])
+
+# tuples are immutable and read only to keep data integrity. No editing allowed.
+# deleting a tuple
+del T3
+# operations on tuple
+T1+T2
+T2*3
+for i in T1:
+    print(i)
+print(1 in T1)
+# functions on tuple
+len(T1)
+min(T_str)
+max(T)
+sum(T)
+sorted(T_str)
+sorted(T,reverse=True)
+
+
+# ============================================================
 # SETS
 # ============================================================
-# unordered, no duplicates
+# unordered(no indexing and slicing), no duplicates
+# it can not contain mutable data types but set itself is a mutable data type
+# create a set
 my_set = {1, 2, 3}
 cities  = {"tokyo", "madrid", "berlin", "delhi"}
 cities2 = {"tokyo", "madrid", "kabul", "seoul"}
+st={1,2,"abc",(1,2,3)}
+#create empty set
+S1=set()
+# we can not access certain elements of set due to no indexing
 
 cities3 = cities.union(cities2)         # all unique elements from both
 cities4 = cities.intersection(cities2)  # common elements
@@ -164,6 +206,7 @@ cities_copy = cities.copy()
 cities_copy.symmetric_difference_update(cities2)  # elements in either but not both
 cities_copy2 = cities.copy()
 cities_copy2.difference_update(cities2)           # removes cities2 elements from cities
+# S1+S2 and S1*3 do not work.
 
 # set methods
 cities.add("paris")        # add element
@@ -190,12 +233,18 @@ cities.clear()             # remove all elements
 # ============================================================
 # unordered, changeable, indexed collections
 # written with curly brackets, have keys and values
+# no indexing
+# mutable
+# keys should always be immutable, values can be mutable
+# keys should be unique
 
 person = {"name": "john", "age": 30, "city": "new york"}
+D2={"name":"kratim","age":20,"marks":{"maths":20,"englsh":20}}
 
 print(person)                # entire dictionary
 print(person["name"])        # direct key access
 print(person.get("age"))     # safe access using get method
+print(D2["marks"]["maths"])
 
 # direct access with non-existent key raises KeyError
 # print(person["age1"])      # KeyError - key does not exist
