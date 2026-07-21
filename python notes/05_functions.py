@@ -5,27 +5,6 @@ import os
 from functools import reduce
 
 # ============================================================
-# BUILT-IN FUNCTIONS
-# ============================================================
-print(len("Hello, World!"))      # 13
-print(len([1, 2, 3, 4, 5]))     # 5
-print(len({1, 2, 3}))           # 3
-print(abs(-5))                    # 5
-print(pow(2, 3))                  # 8
-print(min(1, 2, 3))               # 1
-print(max("kolkata"))             # 't' - max by ASCII value
-print(round(3.14159, 2))          # 3.14
-quotient, remainder = divmod(10, 3)  # (3, 1)
-print(bin(10))    # '0b1010'
-print(oct(10))    # '0o12'
-print(hex(10))    # '0xa'
-x = 10
-print(id(x))      # memory address of object - unique identifier
-print(ord('A'))   # 65 - ASCII value of 'A'
-print(sum([1, 2, 3, 4, 5]))  # 15
-# help(len)       # displays documentation for len() function
-
-# ============================================================
 # BUILT-IN MODULES
 # ============================================================
 # Modules are pre-written code for specific tasks
@@ -113,6 +92,50 @@ def greet(name):
 #     name = "Alice"
 #     print(greet(name))  # runs only when main.py is run directly
 #                         # not when imported as a module
+#functions are blocks of code that perform a specific task and can be reused
+# ============================================================
+# BUILT-IN FUNCTIONS
+# ============================================================
+print(len("Hello, World!"))      # 13
+print(len([1, 2, 3, 4, 5]))     # 5
+print(len({1, 2, 3}))           # 3
+print(abs(-5))                    # 5
+print(pow(2, 3))                  # 8
+print(min(1, 2, 3))               # 1
+print(max("kolkata"))             # 't' - max by ASCII value
+print(round(3.14159, 2))          # 3.14
+quotient, remainder = divmod(10, 3)  # (3, 1)
+print(bin(10))    # '0b1010'
+print(oct(10))    # '0o12'
+print(hex(10))    # '0xa'
+x = 10
+print(id(x))      # memory address of object - unique identifier
+print(ord('A'))   # 65 - ASCII value of 'A'
+print(sum([1, 2, 3, 4, 5]))  # 15
+# help(len)       # displays documentation for len() function
+
+# user-defined functions are created using the def keyword, followed by the function name and parentheses. They can take parameters and return values. Functions help organize code, avoid repetition, and improve readability.
+def identifier(argument):
+    """This is a docstring that describes what the function does."""
+    # code block
+    return result
+identifier(5)  # calling the function with argument 5
+#parameter vs argument: parameters are variables defined in the function signature, while arguments are the actual values passed to the function when it is called. For example, in def add(a, b):, a and b are parameters. When we call add(2, 3), 2 and 3 are arguments.
+#The return statement is used to send a value back to the caller of the function. If no return statement is present, the function returns None by default. Functions can return multiple values as a tuple, which can be unpacked by the caller.
+# types of arguments: positional arguments, keyword arguments, default arguments, variable-length arguments (*args and **kwargs). Positional arguments are matched by position, keyword arguments are matched by name, default arguments have a default value if not provided, and variable-length arguments allow passing an arbitrary number of values.
+# positional-only parameters (/) must be specified by position and cannot be used as keyword arguments. Keyword-only parameters (*) must be specified by name and cannot be used as positional arguments. This allows for more control over how functions are called and can improve code clarity.
+# keyword-only parameters are defined after a * in the function signature, and they must be specified by name when calling the function. Positional-only parameters are defined before a / in the function signature, and they can only be specified by position when calling the function. This allows for more control over how functions are called and can improve code clarity.
+#arbitrary arguments (*args) allow a function to accept any number of positional arguments, which are collected into a tuple. Arbitrary keyword arguments (**kwargs) allow a function to accept any number of keyword arguments, which are collected into a dictionary. This provides flexibility in function calls and allows for more dynamic behavior.
+# Global variables and local variables: Global variables are defined outside of functions and can be accessed from anywhere in the code. Local variables are defined inside a function and can only be accessed within that function. Using local variables helps avoid naming conflicts and keeps the function's scope limited, while global variables can be useful for values needed across multiple functions or modules.
+# everything in Python is an object, including functions. Functions can be assigned to variables, passed as arguments to other functions, and returned from functions. This allows for higher-order functions and functional programming techniques, enabling more abstract and flexible code design.
+# so we can rename a function by assigning it to a new variable, and we can call the function using that new variable name. This allows for more flexible code design and can be useful in certain situations, such as when passing functions as arguments or storing them in data structures.
+# deleting a function using the del statement removes the function's name from the current namespace, making it inaccessible. However, if there are other references to the function (e.g., assigned to a variable), those references will still work. Deleting a function can help free up memory or prevent accidental usage, but it should be done with caution to avoid breaking code that relies on that function.
+# storing functions in data structures like lists or dictionaries allows for dynamic behavior, such as calling different functions based on user input or iterating over a collection of functions. This enables more flexible and modular code design, as functions can be treated as first-class objects and manipulated like any other data type.
+# returning functions from other functions allows for the creation of closures, where the returned function retains access to the variables in the scope of the outer function. This enables more advanced programming techniques, such as creating factory functions or decorators, and allows for encapsulation of behavior and state within a function.
+#functions as arguments allow for higher-order functions, where a function can take another function as input and apply it to data. This enables more abstract and flexible code design, allowing for operations like mapping, filtering, and reducing data using custom logic defined in the passed function. It also promotes code reuse and modularity by separating the operation from the data processing logic.
+
+
+
 
 # ============================================================
 # LAMBDA FUNCTIONS (anonymous functions)
